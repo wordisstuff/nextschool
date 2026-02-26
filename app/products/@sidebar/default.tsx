@@ -1,4 +1,5 @@
 import { fetchCategories } from '@/lib/productsApi';
+import Link from 'next/link';
 
 export default async function Sidebar() {
     // await new Promise(r => setTimeout(r, 6000));
@@ -6,7 +7,9 @@ export default async function Sidebar() {
     return (
         <ul>
             {category?.map(i => (
-                <li key={i.slug}>{i.name}</li>
+                <li key={i.slug}>
+                    <Link href={`/products/${i.slug}`}>{i.name}</Link>
+                </li>
             ))}
         </ul>
     );

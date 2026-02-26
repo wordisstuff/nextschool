@@ -1,11 +1,15 @@
 import { fetchProducts } from '@/lib/productsApi';
 import Link from 'next/link';
 
-export default async function Products() {
-    // await new Promise(r => setTimeout(r, 4000));
+interface ProductsProps {
+    params: Promise<{ slug: string[] }>;
+}
 
-    const products = await fetchProducts();
-    console.log(products);
+export default async function Products({ params }: ProductsProps) {
+    // await new Promise(r => setTimeout(r, 4000));
+    const { slug } = await params;
+    const category = slug[0];
+    const products = await fetchProducts(category);
 
     return (
         <ul>

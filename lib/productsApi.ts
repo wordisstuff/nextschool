@@ -10,9 +10,9 @@ interface Category {
     slug: string;
 }
 
-export const fetchProducts = async (): Promise<Product[]> => {
+export const fetchProducts = async (category: string): Promise<Product[]> => {
     const { data } = await axios.get<ProductResponse>(
-        'https://dummyjson.com/products',
+        `https://dummyjson.com/products/category/${category}`,
     );
     return data.products;
 };
