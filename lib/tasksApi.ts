@@ -18,6 +18,13 @@ export const getTasks = async () => {
     return data;
 };
 
+export const getTask = async (id: Task['id']) => {
+    const { data } = await axios.get<Task>(
+        `https://67a4109531d0d3a6b7854249.mockapi.io/tasks/${id}`,
+    );
+    return data;
+};
+
 export const postTask = async (taskData: TaskData) => {
     const { data } = await axios.post<Task>(
         'https://67a4109531d0d3a6b7854249.mockapi.io/tasks',
