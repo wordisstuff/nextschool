@@ -25,6 +25,15 @@ export const getTask = async (id: Task['id']) => {
     return data;
 };
 
+/*************  ✨ Windsurf Command ⭐  *************/
+/**
+ * Posts a task to the API.
+ *
+ * @param {TaskData} taskData - The data of the task to be posted.
+ *
+ * @returns {Promise<Task>} - A promise with the posted task data.
+ */
+/*******  a41b62a4-3593-44a8-8596-e6a839033b2b  *******/
 export const postTask = async (taskData: TaskData) => {
     const { data } = await axios.post<Task>(
         'https://67a4109531d0d3a6b7854249.mockapi.io/tasks',

@@ -27,7 +27,7 @@ export default function TasksClient() {
         <ul>
             {data?.map(i => (
                 <li key={i.id}>
-                    <Link href={`/task-details/${i.id}`}>{i.title}</Link>
+                    <Link href={`/tasks/${i.id}`}>{i.title}</Link>
                     <p>{i.description}</p>
                     <button onClick={() => delTask(i.id)}>Delete</button>
                 </li>

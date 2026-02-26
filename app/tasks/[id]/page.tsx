@@ -4,7 +4,7 @@ import {
     HydrationBoundary,
     QueryClient,
 } from '@tanstack/react-query';
-import TaskClient from '../../tasks/[id]/TaskClient';
+import TaskClient from './TaskClient';
 
 interface Props {
     params: Promise<{ id: string }>;
